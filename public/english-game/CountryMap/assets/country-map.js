@@ -32,7 +32,7 @@
     suitcaseRewards: [
       { id: 'points', title: '+50 travel points', copy: 'A travel bonus for your profile.', points: 50 },
       { id: 'double', title: 'Double points', copy: 'The next correct answer is worth double.' },
-      { id: 'shield', title: 'Streak shield', copy: 'Ein Mistakes unterbricht deine Serie nicht.' },
+      { id: 'shield', title: 'Streak shield', copy: 'One mistake will not break your streak.' },
       { id: 'travel', title: 'Travel bonus', copy: '+100 game points and +25 travel points.', points: 25, gamePoints: 100 }
     ]
   };
@@ -48,7 +48,7 @@
 
   function safeGet(key) { try { return localStorage.getItem(key); } catch (_) { return null; } }
   function safeSet(key, value) { try { localStorage.setItem(key, value); } catch (_) {} }
-  function format(number) { return new Intl.NumberFormat('de-DE').format(number); }
+  function format(number) { return new Intl.NumberFormat('en-US').format(number); }
   function shuffle(items) { const result = [...items]; for (let i = result.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [result[i], result[j]] = [result[j], result[i]]; } return result; }
   function escapeHTML(value) { return String(value).replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c])); }
   function announce(text) { $('#reiseLive').textContent = ''; requestAnimationFrame(() => { $('#reiseLive').textContent = text; }); }
@@ -204,7 +204,7 @@
   function showRouteChoice() {
     bonusChoices += 1;
     $('#rewardKicker').textContent = 'TRAVEL BONUS · YOUR CHOICE'; $('#rewardHeading').textContent = 'How will you continue?';
-    $('#rewardImage').innerHTML = '<img src="assets/country-map/plane.svg" alt="Flugzeug auf der Reiseroute">';
+    $('#rewardImage').innerHTML = '<img src="assets/country-map/plane.svg" alt="Plane on the travel route">';
     $('#rewardCopy').innerHTML = '<div class="button-row"><button class="reise-button secondary" id="safeRoute">Safe route</button><button class="reise-button primary" id="riskRoute">Risk for a bonus</button></div><small>Safe: your streak is protected once. Risk: The next correct answer is worth double.</small>';
     openModal($('#reiseReward'), $('#reiseNext'));
     $('#safeRoute').onclick = () => { activeBonus = { id: 'shield' }; closeModal($('#reiseReward')); index += 1; renderQuestion(); announce('Safe route selected. Your streak is protected.'); };
@@ -247,7 +247,7 @@
 
   function tone(kind) { if (!(window.ReisenAudio?.isSoundEnabled() ?? soundOn) || (window.ReisenAudio&&!ReisenAudio.sfxAllowed(kind==='complete'?'major':'normal'))) return; try { audio = audio || new (window.AudioContext || window.webkitAudioContext)(); if (audio.state === 'suspended') audio.resume(); const notes = kind === 'wrong' ? [210,165] : kind === 'complete' ? [392,523,659,784] : [523,659,784], volume=(window.ReisenAudio?.getSettings().soundVolume||.7)*.14; notes.forEach((f,i)=>{ const o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime+i*.09;o.type=kind==='wrong'?'triangle':'sine';o.frequency.value=f;g.gain.setValueAtTime(.001,t);g.gain.exponentialRampToValueAtTime(volume,t+.015);g.gain.exponentialRampToValueAtTime(.001,t+.17);o.connect(g).connect(audio.destination);o.start(t);o.stop(t+.18); }); } catch (_) {} }
   function speak() { if (round[index]) window.ReisenAudio?.speak(round[index].name,{rate:.85}); }
-  function updateSoundButtons() { $$('[data-sound]').forEach(btn=>{btn.textContent=soundOn?'🔊':'🔇';btn.setAttribute('aria-label',soundOn?'Ton ausschalten':'Ton einschalten');}); }
+  function updateSoundButtons() { $$('[data-sound]').forEach(btn=>{btn.textContent=soundOn?'🔊':'🔇';btn.setAttribute('aria-label',soundOn?'Turn sound off':'Turn sound on');}); }
 
   function focusables(root) { return [...root.querySelectorAll('button:not(:disabled),a[href],[tabindex]:not([tabindex="-1"])')].filter(el => !el.hidden); }
   function openModal(modal, opener) { modalOpener=opener||document.activeElement;modal.hidden=false;document.body.style.overflow='hidden';focusables(modal)[0]?.focus(); }

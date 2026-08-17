@@ -1271,7 +1271,7 @@
             <div class="reisen-header__actions"><button class="reisen-header__action reisen-header__action--passport"
                     data-passport><img src="assets/country-map/passport.svg"
                         alt=""><span>Passport</span></button><button class="reisen-header__action" data-sound
-                    aria-label="Ton ausschalten">🔊<span>Sound</span></button><a class="reisen-header__action"
+                    aria-label="Turn sound off">🔊<span>Sound</span></button><a class="reisen-header__action"
                     href="../index.html" aria-label="Home">⌂<span>Home</span></a></div>
         </header>
         <main id="reiseMain" class="reise-main">
@@ -1280,7 +1280,7 @@
                 <article class="paper intro-card">
                     <p class="kicker">TRAVEL STATION 01</p>
                     <h1>Country Race</h1>
-                    <p class="tagline">Flugreise durch die Countries</p><b>9 Countries · 9 Flugziele</b>
+                    <p class="tagline">Flight across the countries</p><b>9 countries · 9 destinations</b>
                     <div class="button-row"><button class="reise-button primary" id="reiseStartBtn">Start flight
                             →</button><button class="reise-button secondary" id="reiseHowBtn">How to play?</button><button class="reise-button quiet" data-passport>View passport</button>
                     </div>
@@ -1304,7 +1304,7 @@
                 <aside class="paper journey-panel">
                     <p class="station-tag">TRAVEL STATION 01</p>
                     <h2>COUNTRY RACE</h2>
-                    <p class="left-subtitle">Flugreise durch die Countries</p><strong>9 Countries · 9 Flugziele</strong>
+                    <p class="left-subtitle">Flight across the countries</p><strong>9 countries · 9 destinations</strong>
                     <div class="mini-map"><img src="assets/country-map/travel-map.svg" alt="Dekorative Reisekarte">
                         <div class="route" data-route></div><img id="reisePlane" src="assets/country-map/plane.svg"
                             alt="Aktuelle Position">
@@ -1315,15 +1315,14 @@
                     <div class="bonus-box"><img src="assets/country-map/suitcase.svg"
                             alt=""><span><b>Bonus-Suitcase</b><small><b data-suitcase>0</b> / 3  correct</small></span>
                     </div>
-                    <div class="combo-box"><b id="reiseCombo">Serie starten</b><small id="comboHelp">Drei  correct
-                            answers unlock the suitcase.</small></div>
+                    <div class="combo-box"><b id="reiseCombo">Start a streak</b><small id="comboHelp">Three correct answers unlock the suitcase.</small></div>
                 </aside>
                 <div class="question-column">
                     <div class="mission-route paper"><span id="reiseMission">MISSION 1 / 9</span>
                         <div class="route" data-route></div><b>⚑</b>
                     </div>
                     <article class="paper quiz-card flight-card phase-start" id="reiseCard">
-                        <div class="mystery" id="mysteryLabel" hidden><b>GEHEIMES LAND</b><span>Doppelte
+                        <div class="mystery" id="mysteryLabel" hidden><b>MYSTERY COUNTRY</b><span>Doubled
                                 Mission points</span></div>
                         <div class="flight-prompt">
                             <span>DESTINATION</span>
@@ -1331,7 +1330,7 @@
                             <div class="conceal" id="conceal" hidden>?</div><button id="reiseSpeak"
                                 aria-label="Listen to country name">🔊</button>
                         </div>
-                        <h2>Fliege zum  correctn Land!</h2>
+                        <h2>Fly to the correct country!</h2>
                         <div class="flight-world" id="flightWorld">
                             <div class="flight-sky" aria-hidden="true"><i></i><i></i><i></i></div>
                             <div class="flight-horizon" aria-hidden="true"></div>
@@ -1386,7 +1385,7 @@
         <div class="reise-overlay" id="reisePassport" hidden>
             <section class="passport-book-new" role="dialog" aria-modal="true" aria-labelledby="reisePassportTitle">
                 <button class="close-modal" data-close>×</button>
-                <header><small>DEINE ENGLISH JOURNEY</small>
+                <header><small>YOUR ENGLISH JOURNEY</small>
                     <h2 id="reisePassportTitle">My passport</h2>
                     <p>Countries visited: <b data-visited>0</b> / 9</p>
                 </header><em class="meter"><u data-passport-bar></u></em>
@@ -1416,7 +1415,7 @@
             <section class="reward-card tutorial-card" role="dialog" aria-modal="true" aria-labelledby="tutorialHeading"><button
                     class="close-modal" data-close>×</button><small>COUNTRY RACE</small>
                 <h2 id="tutorialHeading">So fliegst du</h2>
-                <ol><li>Look at the flag.</li><li>Choose a route using the buttons, ← →, or A / D.</li><li>Fliege durch das  correct Countries-Tor und sammle Flight miles.</li></ol>
+                <ol><li>Look at the flag.</li><li>Choose a route using the buttons, ← →, or A / D.</li><li>Fly through the correct country gate and collect flight miles.</li></ol>
                 <p>Three correct flights activate your boost. There are no lives and no time limit.</p>
                 <button class="reise-button primary" id="tutorialStart">Start flight →</button>
             </section>
@@ -1428,7 +1427,7 @@
             <div class="site-brand">✈️ Reisen</div>
             <a class="header-item" href="../index.html" aria-label="Zur Reisen Home">🏠 Home</a>
             <div class="header-item" aria-label="Beste Punktzahl">⭐ Best Score <span id="headerBest">0</span></div>
-            <button class="sound" data-sound aria-label="Ton ein- oder ausschalten">🔊 Sound</button>
+            <button class="sound" data-sound aria-label="Toggle sound">🔊 Sound</button>
         </header>
         <div class="bg" aria-hidden="true">
             <div class="orb o1"></div>
@@ -1473,7 +1472,7 @@
                             <div class="flag" id="flag" role="img"></div><button class="icon-btn speak" id="speak"
                                 aria-label="Read country aloud">🔈</button>
                         </div>
-                        <h2 class="question">Welches Land ist das?</h2>
+                        <h2 class="question">Which country is this?</h2>
                         <div class="answers" id="answers"></div>
                         <div class="feedback" id="feedback" aria-live="assertive"></div>
                     </div>
@@ -1509,7 +1508,7 @@
                     class="modal-close" data-close-passport aria-label="Close passport">✕</button>
                 <header class="passport-head">
                     <h2 id="passportTitle">🛂 My passport</h2>
-                    <p>Meine Countries</p>
+                    <p>My countries</p>
                 </header>
                 <div class="passport-progress-wrap">
                     <div>Countries visited: <span data-visited>0</span> / 9</div>
@@ -1565,7 +1564,7 @@
             function show(name) { Object.entries(screens).forEach(([k, v]) => v.hidden = k !== name) }
             const TOTAL_QUESTIONS = countries.length;
             function makeRound() { return shuffle(countries.slice()) }
-            function updateSound() { $$('[data-sound]').forEach(b => { b.textContent = soundOn ? '🔊 Sound' : '🔇 Sound'; b.setAttribute('aria-label', soundOn ? 'Ton ausschalten' : 'Ton einschalten') }) }
+            function updateSound() { $$('[data-sound]').forEach(b => { b.textContent = soundOn ? '🔊 Sound' : '🔇 Sound'; b.setAttribute('aria-label', soundOn ? 'Turn sound off' : 'Turn sound on') }) }
             function tone(kind) { if (!soundOn) return; try { audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)(); if (audioCtx.state === 'suspended') audioCtx.resume(); const notes = kind === 'good' ? [523, 659, 784] : kind === 'bad' ? [220, 165] : [523, 659, 784, 1047]; notes.forEach((f, i) => { const o = audioCtx.createOscillator(), g = audioCtx.createGain(); o.type = kind === 'bad' ? 'sawtooth' : 'sine'; o.frequency.value = f; g.gain.setValueAtTime(.0001, audioCtx.currentTime + i * .11); g.gain.exponentialRampToValueAtTime(.13, audioCtx.currentTime + i * .11 + .02); g.gain.exponentialRampToValueAtTime(.0001, audioCtx.currentTime + i * .11 + .18); o.connect(g).connect(audioCtx.destination); o.start(audioCtx.currentTime + i * .11); o.stop(audioCtx.currentTime + i * .11 + .2) }) } catch (e) { } }
             function start() { round = makeRound(); index = score = correct = combo = newStamps = 0; locked = false; $('#score').textContent = 0; show('game'); render() }
             function createChoices(item) { const selected = new Map([[item[1], item]]); const pool = shuffle(countries.slice()); for (const country of pool) { if (!selected.has(country[1])) selected.set(country[1], country); if (selected.size === 4) break } return shuffle([...selected.values()]) }
