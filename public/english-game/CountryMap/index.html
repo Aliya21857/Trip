@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -1264,13 +1264,13 @@
                         data-level-name>Starter</b><small data-xp-text>0 / 250 XP</small><span class="reisen-xp"><i
                             data-xp-bar></i></span></span></div>
             <div class="reisen-header__stat"><span class="reisen-star">★</span><span><b
-                        data-global-points>0</b><small>Reisepunkte</small></span></div>
+                        data-global-points>0</b><small>Travel points</small></span></div>
             <div class="reisen-header__stat reisen-header__stat--case"><img src="assets/country-map/suitcase.svg"
                     width="42" height="42" alt=""><span><b><span data-suitcase>0</span> /
-                        3</b><small>Koffer</small></span></div>
+                        3</b><small>Suitcase</small></span></div>
             <div class="reisen-header__actions"><button class="reisen-header__action reisen-header__action--passport"
                     data-passport><img src="assets/country-map/passport.svg"
-                        alt=""><span>Reisepass</span></button><button class="reisen-header__action" data-sound
+                        alt=""><span>Passport</span></button><button class="reisen-header__action" data-sound
                     aria-label="Ton ausschalten">🔊<span>Sound</span></button><a class="reisen-header__action"
                     href="../index.html" aria-label="Home">⌂<span>Home</span></a></div>
         </header>
@@ -1281,18 +1281,18 @@
                     <p class="kicker">TRAVEL STATION 01</p>
                     <h1>Country Race</h1>
                     <p class="tagline">Flugreise durch die Countries</p><b>9 Countries · 9 Flugziele</b>
-                    <div class="button-row"><button class="reise-button primary" id="reiseStartBtn">Flug starten
-                            →</button><button class="reise-button secondary" id="reiseHowBtn">How to play?</button><button class="reise-button quiet" data-passport>Reisepass ansehen</button>
+                    <div class="button-row"><button class="reise-button primary" id="reiseStartBtn">Start flight
+                            →</button><button class="reise-button secondary" id="reiseHowBtn">How to play?</button><button class="reise-button quiet" data-passport>View passport</button>
                     </div>
                 </article>
                 <article class="paper map-card"><img src="assets/country-map/travel-map.svg"
-                        alt="Illustrierte Reiseroute">
+                        alt="Illustrated travel route">
                     <div class="route" data-route></div><img class="map-plane" src="assets/country-map/plane.svg"
                         alt="">
                 </article>
                 <aside class="status-grid">
-                    <div class="status-box"><i>★</i><span>Reisepunkte<strong data-global-points>0</strong></span></div>
-                    <div class="status-box"><i>⌁</i><span>Reise-Level<strong data-level-name>Lv. 1 · Starter</strong><em
+                    <div class="status-box"><i>★</i><span>Travel points<strong data-global-points>0</strong></span></div>
+                    <div class="status-box"><i>⌁</i><span>Journey level<strong data-level-name>Lv. 1 · Starter</strong><em
                                 class="meter"><u data-xp-bar></u></em><small data-xp-text></small></span></div>
                     <div class="status-box"><img src="assets/country-map/passport.svg" alt=""><span>Countries
                             gesammelt<strong><b data-visited>0</b> / 9</strong></span></div>
@@ -1309,15 +1309,14 @@
                         <div class="route" data-route></div><img id="reisePlane" src="assets/country-map/plane.svg"
                             alt="Aktuelle Position">
                     </div>
-                    <div class="left-passport"><img src="assets/country-map/passport.svg" alt=""><span>Mein
-                            Reisepass<b><b data-visited>0</b> / 9 Countries besucht</b></span></div><button
-                        class="reise-button primary" data-passport>Reisepass ansehen</button><small
+                    <div class="left-passport"><img src="assets/country-map/passport.svg" alt=""><span>My passport<b><b data-visited>0</b> / 9 Countries visited</b></span></div><button
+                        class="reise-button primary" data-passport>View passport</button><small
                         class="left-best">Best score 🏆 <b id="leftBest">0</b></small>
                     <div class="bonus-box"><img src="assets/country-map/suitcase.svg"
-                            alt=""><span><b>Bonus-Koffer</b><small><b data-suitcase>0</b> / 3 richtige</small></span>
+                            alt=""><span><b>Bonus-Suitcase</b><small><b data-suitcase>0</b> / 3  correct</small></span>
                     </div>
-                    <div class="combo-box"><b id="reiseCombo">Serie starten</b><small id="comboHelp">Drei richtige
-                            Antworten finden den Koffer.</small></div>
+                    <div class="combo-box"><b id="reiseCombo">Serie starten</b><small id="comboHelp">Drei  correct
+                            answers unlock the suitcase.</small></div>
                 </aside>
                 <div class="question-column">
                     <div class="mission-route paper"><span id="reiseMission">MISSION 1 / 9</span>
@@ -1325,62 +1324,61 @@
                     </div>
                     <article class="paper quiz-card flight-card phase-start" id="reiseCard">
                         <div class="mystery" id="mysteryLabel" hidden><b>GEHEIMES LAND</b><span>Doppelte
-                                Missionspunkte</span></div>
+                                Mission points</span></div>
                         <div class="flight-prompt">
-                            <span>FLUGZIEL</span>
+                            <span>DESTINATION</span>
                             <div class="reise-flag" id="reiseFlag" role="img"></div>
                             <div class="conceal" id="conceal" hidden>?</div><button id="reiseSpeak"
-                                aria-label="Countriesnamen anhören">🔊</button>
+                                aria-label="Listen to country name">🔊</button>
                         </div>
-                        <h2>Fliege zum richtigen Land!</h2>
+                        <h2>Fliege zum  correctn Land!</h2>
                         <div class="flight-world" id="flightWorld">
                             <div class="flight-sky" aria-hidden="true"><i></i><i></i><i></i></div>
                             <div class="flight-horizon" aria-hidden="true"></div>
                             <div class="reise-answers flight-lanes" id="reiseAnswers"></div>
                             <div class="flight-plane" id="flightPlane" aria-hidden="true"><i class="turbo-trail"></i><img src="assets/country-map/plane.svg" alt=""></div>
-                            <div class="arrival-banner" id="arrivalBanner" hidden><b>ZIEL ERREICHT!</b><span>Alle Countries angeflogen</span></div>
+                            <div class="arrival-banner" id="arrivalBanner" hidden><b>DESTINATION REACHED!</b><span>All countries visited</span></div>
                         </div>
                         <div class="reise-feedback" id="reiseFeedback" aria-live="polite"></div><button
                             class="reise-button primary" id="reiseNext" hidden>Fly onward →</button>
                     </article>
                     <div class="game-footer"><button class="reise-button secondary"
                             onclick="document.getElementById('reiseStart').hidden=false;document.getElementById('reiseGame').hidden=true">←
-                            Zurück</button><span>✈ Flugmeilen <b id="reiseScore">0</b></span><span>Best score <b
+                            Back</button><span>✈ Flight miles <b id="reiseScore">0</b></span><span>Best score <b
                                 id="reiseBest">0</b></span></div>
                 </div>
                 <aside class="paper passport-side">
                     <header><img src="assets/country-map/passport.svg" alt="">
-                        <h3>MEIN REISEPASS</h3>
+                        <h3>MY PASSPORT</h3>
                         <p>Lesson 1</p>
                     </header>
                     <nav>
                         <span>◎<small>Countries</small></span><span>▣<small>Dialogues</small></span><span>✚<small>Sentences</small></span><span>⌖<small>Where From?</small></span>
                     </nav>
-                    <p>Besuchte Countries: <b data-visited>0</b> / 9</p>
+                    <p>Countries visited: <b data-visited>0</b> / 9</p>
                     <div id="reiseMiniStamps" class="mini-stamp-grid"></div><button class="text-link"
-                        data-passport>Reisepass öffnen →</button>
-                    <footer>Alle 9 Countries besuchen für das <b>Countries-Meister-Abzeichen!</b></footer>
+                        data-passport>Passport open →</button>
+                    <footer>Visit all 9 countries to earn the <b>Country Master badge!</b></footer>
                 </aside>
             </section>
             <section id="reiseEnd" class="reise-screen end-layout" hidden>
                 <article class="paper final-card"><img src="assets/country-map/plane.svg" alt="">
                     <p class="kicker">TRAVEL STATION 01</p>
-                    <h1>Reise geschafft!</h1>
+                    <h1>Journey complete!</h1>
                     <p id="recordText"></p>
                     <div class="results">
                         <div><b>9</b><span>Missionen</span></div>
-                        <div><b id="finalCorrect">0 / 9</b><span>richtig</span></div>
-                        <div><b id="finalScore">0</b><span>Flugmeilen</span></div>
+                        <div><b id="finalCorrect">0 / 9</b><span>correct</span></div>
+                        <div><b id="finalScore">0</b><span>Flight miles</span></div>
                         <div><b id="finalCombo">x0</b><span>Beste Serie</span></div>
-                        <div><b id="finalStamps">0</b><span>Neue Stempel</span></div>
+                        <div><b id="finalStamps">0</b><span>New stamps</span></div>
                     </div>
                     <div id="finishBonus" class="finish-bonus"></div>
-                    <div class="global-result"><span>★ Reisepunkte <b data-global-points>0</b></span><span
+                    <div class="global-result"><span>★ Travel points <b data-global-points>0</b></span><span
                             data-level-name>Lv. 1 · Starter</span><span>English Journey: <b data-games>0</b> / 4</span><em
                             class="meter"><u data-lesson-bar></u></em></div>
-                    <div class="button-row"><button class="reise-button primary" id="reiseAgain">Play again
-                            spielen</button><button class="reise-button secondary" data-passport>Reisepass
-                            ansehen</button><a class="reise-button quiet" href="../index.html">Back to games</a>
+                    <div class="button-row"><button class="reise-button primary" id="reiseAgain">Play again</button><button class="reise-button secondary" data-passport>Passport
+                            view</button><a class="reise-button quiet" href="../index.html">Back to games</a>
                     </div>
                 </article>
             </section>
@@ -1389,18 +1387,18 @@
             <section class="passport-book-new" role="dialog" aria-modal="true" aria-labelledby="reisePassportTitle">
                 <button class="close-modal" data-close>×</button>
                 <header><small>DEINE ENGLISH JOURNEY</small>
-                    <h2 id="reisePassportTitle">Mein Reisepass</h2>
-                    <p>Besuchte Countries: <b data-visited>0</b> / 9</p>
+                    <h2 id="reisePassportTitle">My passport</h2>
+                    <p>Countries visited: <b data-visited>0</b> / 9</p>
                 </header><em class="meter"><u data-passport-bar></u></em>
-                <nav><button class="active">Countries</button><button disabled>Meine Reise · bald</button></nav>
+                <nav><button class="active">Countries</button><button disabled>My journey · soon</button></nav>
                 <div id="reiseStampGrid" class="stamp-grid-new"></div>
-                <p id="passportMilestone">Sammle alle neun Countriesstempel.</p><button class="reset-link"
-                    id="reiseReset">Countriesstempel zurücksetzen</button>
+                <p id="passportMilestone">Collect all nine country stamps.</p><button class="reset-link"
+                    id="reiseReset">Reset country stamps</button>
             </section>
         </div>
         <div class="reise-overlay" id="reiseReward" hidden>
             <section class="reward-card" role="dialog" aria-modal="true" aria-labelledby="rewardHeading"><button
-                    class="close-modal" data-close>×</button><small id="rewardKicker">NEUER STEMPEL</small>
+                    class="close-modal" data-close>×</button><small id="rewardKicker">NEW STAMP</small>
                 <h2 id="rewardHeading"></h2>
                 <div id="rewardImage"></div>
                 <p id="rewardCopy"></p><button class="reise-button primary" data-close>Continue journey</button>
@@ -1408,9 +1406,9 @@
         </div>
         <div class="reise-overlay" id="reiseConfirm" hidden>
             <section class="confirm-card" role="alertdialog" aria-modal="true">
-                <h2>Countriesstempel zurücksetzen?</h2>
-                <p>Besuche und Stempel werden gelöscht. Reisepunkte, XP und Spielwerte bleiben erhalten.</p><button
-                    class="reise-button secondary" id="reiseCancel">Abbrechen</button><button
+                <h2>Reset country stamps?</h2>
+                <p>Visits and stamps will be deleted. Travel points, XP, and game scores will remain.</p><button
+                    class="reise-button secondary" id="reiseCancel">Cancel</button><button
                     class="reise-button danger" id="reiseConfirmBtn">Reset</button>
             </section>
         </div>
@@ -1418,9 +1416,9 @@
             <section class="reward-card tutorial-card" role="dialog" aria-modal="true" aria-labelledby="tutorialHeading"><button
                     class="close-modal" data-close>×</button><small>COUNTRY RACE</small>
                 <h2 id="tutorialHeading">So fliegst du</h2>
-                <ol><li>Sieh dir die Flagge an.</li><li>Wähle mit Hinten, ← → oder A / D eine Flugroute.</li><li>Fliege durch das richtige Countries-Tor und sammle Flugmeilen.</li></ol>
-                <p>Ab drei richtigen Flügen startet dein Turbo. Es gibt keine Leben und keinen Zeitdruck.</p>
-                <button class="reise-button primary" id="tutorialStart">Flug starten →</button>
+                <ol><li>Look at the flag.</li><li>Choose a route using the buttons, ← →, or A / D.</li><li>Fliege durch das  correct Countries-Tor und sammle Flight miles.</li></ol>
+                <p>Three correct flights activate your boost. There are no lives and no time limit.</p>
+                <button class="reise-button primary" id="tutorialStart">Start flight →</button>
             </section>
         </div>
         <div id="reiseToasts" class="toast-stack" aria-live="polite"></div>
@@ -1449,22 +1447,22 @@
         <main class="app">
             <div class="shell">
                 <section id="start" class="screen">
-                    <div class="screen-head"><button class="passport-btn" data-passport aria-label="Reisepass öffnen">🛂
-                            Reisepass</button></div>
+                    <div class="screen-head"><button class="passport-btn" data-passport aria-label="Passport open">🛂
+                            Passport</button></div>
                     <div class="card start-card"><span class="globe">🌍</span>
                         <h1>Flag Match</h1>
                         <p>Where are you from?</p><button class="passport-card" data-passport
-                            aria-label="Reisepass öffnen"><strong>🛂 Reisepass</strong><span><b data-visited>0</b> / 9
-                                Countries besucht</span><span class="mini-progress"><span
+                            aria-label="Passport open"><strong>🛂 Passport</strong><span><b data-visited>0</b> / 9
+                                Countries visited</span><span class="mini-progress"><span
                                     data-passport-bar></span></span></button><button class="primary" id="startBtn">Spiel
                             starten</button>
                     </div>
                 </section>
                 <section id="game" class="screen" hidden>
                     <header class="topbar">
-                        <div class="progress-meta"><span id="qCount">Frage 1 / 9</span></div>
+                        <div class="progress-meta"><span id="qCount">Question 1 / 9</span></div>
                         <div class="score">⭐ <span id="score">0</span></div><button class="passport-btn" data-passport
-                            aria-label="Reisepass öffnen">🛂 Reisepass</button>
+                            aria-label="Passport open">🛂 Passport</button>
                     </header>
                     <div class="progress" aria-label="Spielfortschritt">
                         <div id="bar"></div>
@@ -1473,7 +1471,7 @@
                         <div class="combo" id="combo" aria-live="polite"></div>
                         <div class="flag-row">
                             <div class="flag" id="flag" role="img"></div><button class="icon-btn speak" id="speak"
-                                aria-label="Land vorlesen">🔈</button>
+                                aria-label="Read country aloud">🔈</button>
                         </div>
                         <h2 class="question">Welches Land ist das?</h2>
                         <div class="answers" id="answers"></div>
@@ -1481,24 +1479,24 @@
                     </div>
                 </section>
                 <section id="end" class="screen" hidden>
-                    <div class="screen-head"><button class="passport-btn" data-passport aria-label="Reisepass öffnen">🛂
-                            Reisepass</button></div>
+                    <div class="screen-head"><button class="passport-btn" data-passport aria-label="Passport open">🛂
+                            Passport</button></div>
                     <div class="card"><span class="globe">🎉</span>
                         <h2>Game complete!</h2>
                         <div class="stats">
                             <div class="stat"><b id="correctStat">0</b><span>Correct answers</span></div>
-                            <div class="stat"><b id="mistakeStat">0</b><span>Fehler</span></div>
-                            <div class="stat"><b id="percentStat">0%</b><span>Prozent</span></div>
+                            <div class="stat"><b id="mistakeStat">0</b><span>Mistakes</span></div>
+                            <div class="stat"><b id="percentStat">0%</b><span>Accuracy</span></div>
                             <div class="stat"><b id="finalStat">0</b><span>⭐ Punktzahl</span></div>
                             <div class="stat" style="grid-column:1/-1"><b id="bestStat">0</b><span>🏆 Beste
                                     Punktzahl</span>
                             </div>
                         </div>
                         <div class="passport-summary">
-                            <p id="newStamps">Keine neuen Stempel in dieser Runde.</p>
-                            <p>Besuchte Countries insgesamt: <span data-visited>0</span> / 9</p><button
-                                class="primary secondary" data-passport aria-label="Reisepass öffnen">Reisepass
-                                ansehen</button>
+                            <p id="newStamps">No new stamps this round.</p>
+                            <p>Countries visited in total: <span data-visited>0</span> / 9</p><button
+                                class="primary secondary" data-passport aria-label="Passport open">Passport
+                                view</button>
                         </div>
                         <div class="actions"><button class="primary" id="againBtn">Play again</button><button
                                 class="primary secondary" id="homeBtn">Home</button></div>
@@ -1508,41 +1506,40 @@
         </main>
         <div class="overlay" id="passportModal" hidden>
             <section class="passport-book" role="dialog" aria-modal="true" aria-labelledby="passportTitle"><button
-                    class="modal-close" data-close-passport aria-label="Reisepass schließen">✕</button>
+                    class="modal-close" data-close-passport aria-label="Close passport">✕</button>
                 <header class="passport-head">
-                    <h2 id="passportTitle">🛂 Mein Reisepass</h2>
+                    <h2 id="passportTitle">🛂 My passport</h2>
                     <p>Meine Countries</p>
                 </header>
                 <div class="passport-progress-wrap">
-                    <div>Besuchte Countries: <span data-visited>0</span> / 9</div>
+                    <div>Countries visited: <span data-visited>0</span> / 9</div>
                     <div class="passport-progress"><span data-passport-bar></span></div>
-                    <div id="completeBadge" class="complete" hidden>🌍 Alle Countries besucht! &nbsp; 🏅 Goldener Reisepass
+                    <div id="completeBadge" class="complete" hidden>🌍 All countries visited! &nbsp; 🏅 Golden Passport
                     </div>
                 </div>
                 <div class="stamp-grid" id="stampGrid"></div>
-                <footer class="passport-footer"><button class="reset-btn" id="resetPassportBtn">Reisepass
-                        zurücksetzen</button></footer>
+                <footer class="passport-footer"><button class="reset-btn" id="resetPassportBtn">Reset passport</button></footer>
             </section>
         </div>
         <div class="overlay" id="unlockModal" hidden>
             <section class="unlock-box" role="dialog" aria-modal="true" aria-labelledby="unlockTitle"><button
-                    class="modal-close" id="closeUnlock" aria-label="Stempelmeldung schließen">✕</button>
-                <h2 id="unlockTitle">Neuer Stempel!</h2>
+                    class="modal-close" id="closeUnlock" aria-label="Close stamp message">✕</button>
+                <h2 id="unlockTitle">New stamp!</h2>
                 <div id="unlockStamp"></div>
-                <p><strong id="unlockCountry"></strong> besucht!</p>
+                <p><strong id="unlockCountry"></strong> visited!</p>
             </section>
         </div>
         <div class="overlay" id="resetConfirm" hidden>
             <section class="confirm-box" role="alertdialog" aria-modal="true" aria-labelledby="resetTitle">
-                <h2 id="resetTitle">Möchtest du alle Stempel löschen?</h2>
-                <div class="confirm-actions"><button id="cancelReset">Abbrechen</button><button class="danger"
+                <h2 id="resetTitle">Delete all stamps?</h2>
+                <div class="confirm-actions"><button id="cancelReset">Cancel</button><button class="danger"
                         id="confirmReset">Reset</button></div>
             </section>
         </div>
         <script type="text/plain" aria-hidden="true">
         (() => {
             'use strict';
-            const countries = [['de', 'Englishland'], ['at', 'Austria'], ['ch', 'Switzerland'], ['fr', 'France'], ['es', 'Spain'], ['tr', 'Turkey'], ['er', 'Eritrea'], ['za', 'South Africa'], ['us', 'the USA']];
+            const countries = [['de', 'Germany'], ['at', 'Austria'], ['ch', 'Switzerland'], ['fr', 'France'], ['es', 'Spain'], ['tr', 'Turkey'], ['er', 'Eritrea'], ['za', 'South Africa'], ['us', 'the USA']];
             const PASSPORT_KEY = 'german-games-passport-v1';
             const passportMeta = { de: { flag: '🇩🇪', color: '#2864ad' }, at: { flag: '🇦🇹', color: '#c73743' }, ch: { flag: '🇨🇭', color: '#9e2732' }, fr: { flag: '🇫🇷', color: '#203b79' }, es: { flag: '🇪🇸', color: '#d77a18' }, tr: { flag: '🇹🇷', color: '#b51f3b' }, er: { flag: '🇪🇷', color: '#168b88' }, za: { flag: '🇿🇦', color: '#238252' }, us: { flag: '🇺🇸', color: '#243f76' } };
             function flagSVG(code) { const o = '<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">', z = '</svg>'; const bands = (a, v = false) => a.map((c, i) => `<rect ${v ? `x="${i * 300 / a.length}" width="${300 / a.length}" height="200"` : `y="${i * 200 / a.length}" width="300" height="${200 / a.length}"`} fill="${c}"/>`).join(''); const star = (x, y, s = 20, c = '#fff') => `<text x="${x}" y="${y}" fill="${c}" font-size="${s * 2}" text-anchor="middle" dominant-baseline="central">★</text>`; let s = ''; if (code === 'de') s = bands(['#111', '#d00', '#ffce00']); if (code === 'at') s = bands(['#ed2939', '#fff', '#ed2939']); if (code === 'ch') s = '<rect width="300" height="200" fill="#d52b1e"/><path d="M125 35h50v40h40v50h-40v40h-50v-40H85V75h40z" fill="#fff"/>'; if (code === 'fr') s = bands(['#0055a4', '#fff', '#ef4135'], true); if (code === 'es') s = '<rect width="300" height="200" fill="#aa151b"/><rect y="50" width="300" height="100" fill="#f1bf00"/><rect x="68" y="78" width="27" height="43" rx="3" fill="#aa151b"/><circle cx="81.5" cy="99" r="9" fill="#f1bf00"/>'; if (code === 'tr') s = '<rect width="300" height="200" fill="#e30a17"/><circle cx="125" cy="100" r="53" fill="#fff"/><circle cx="143" cy="100" r="43" fill="#e30a17"/>' + star(190, 100, 19); if (code === 'er') s = '<rect width="300" height="200" fill="#12ad2b"/><path d="M0 0v200l300-100z" fill="#e4181c"/><path d="M0 200h300L0 100z" fill="#4189dd"/><circle cx="75" cy="100" r="29" fill="none" stroke="#ffc726" stroke-width="7"/><path d="M75 70v62M60 82l15 13 15-13M57 104l18 12 18-12" stroke="#ffc726" stroke-width="5" fill="none"/>'; if (code === 'za') s = '<rect width="300" height="200" fill="#de3831"/><path d="M0 0l105 100L0 200z" fill="#000"/><path d="M0 75h73L165 0h135v52H178l-60 48 60 48h122v52H165l-92-75H0z" fill="#fff"/><path d="M0 85h80l94-75h126v32H170l-72 58 72 58h130v32H174l-94-75H0z" fill="#007a4d"/><path d="M174 158h126v32H174l-40-32z" fill="#002395"/><path d="M0 77v46l23-23z" fill="#ffb612"/>'; if (code === 'us') s = bands(Array.from({ length: 13 }, (_, i) => i % 2 ? '#fff' : '#b22234')) + '<rect width="126" height="108" fill="#3c3b6e"/>' + Array.from({ length: 6 }, (_, y) => Array.from({ length: 5 }, (_, x) => star(13 + x * 25 + (y % 2 ? 12 : 0), 10 + y * 18, 5)).join('')).join(''); return o + s + z }
@@ -1552,7 +1549,7 @@
             let passport = loadPassport();
             function savePassport() { storageSet(PASSPORT_KEY, JSON.stringify(passport)) }
             function visitedCount() { return countries.filter(([id]) => passport.countries[id].unlocked).length }
-            function stampHTML(id, name, state, large = false) { const meta = passportMeta[id], turn = ((countries.findIndex(c => c[0] === id) % 5) - 2) * 1.7; return `<div class="stamp${state.unlocked ? '' : ' locked'}" style="--ink:${meta.color};--turn:${turn}deg" aria-label="${name}: ${state.unlocked ? `Besucht, ${state.visits} Besuche` : 'Noch nicht besucht'}"><span class="stamp-flag">${meta.flag}</span><span class="stamp-name">✦ ${name} ✦</span><span class="stamp-state">${state.unlocked ? '✓ BESUCHT' : '🔒 Noch nicht besucht'}</span>${state.unlocked ? `<span class="stamp-visits">✓ ${state.visits}</span>` : ''}</div>` }
+            function stampHTML(id, name, state, large = false) { const meta = passportMeta[id], turn = ((countries.findIndex(c => c[0] === id) % 5) - 2) * 1.7; return `<div class="stamp${state.unlocked ? '' : ' locked'}" style="--ink:${meta.color};--turn:${turn}deg" aria-label="${name}: ${state.unlocked ? `Visited, ${state.visits} visits` : 'Not visited yet'}"><span class="stamp-flag">${meta.flag}</span><span class="stamp-name">✦ ${name} ✦</span><span class="stamp-state">${state.unlocked ? '✓ VISITED' : '🔒 Not visited yet'}</span>${state.unlocked ? `<span class="stamp-visits">✓ ${state.visits}</span>` : ''}</div>` }
             function renderPassport() { const grid = $('#stampGrid'); grid.innerHTML = countries.map(([id, name]) => stampHTML(id, name, passport.countries[id])).join(''); updatePassportProgress() }
             function updatePassportProgress() { const count = visitedCount(), pct = count / countries.length * 100; $$('[data-visited]').forEach(x => x.textContent = count); $$('[data-passport-bar]').forEach(x => x.style.width = pct + '%'); $('#completeBadge').hidden = count !== countries.length }
             function focusables(root) { return $$('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])').filter(x => root.contains(x) && !x.disabled && !x.hidden) }
@@ -1563,7 +1560,7 @@
             function stampSound() { if (!soundOn) return; try { audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)(); if (audioCtx.state === 'suspended') audioCtx.resume(); const now = audioCtx.currentTime;[[110, 'sine', .16, 0], [170, 'triangle', .1, .04], [740, 'sine', .08, .12]].forEach(([f, type, gain, delay]) => { const o = audioCtx.createOscillator(), g = audioCtx.createGain(); o.type = type; o.frequency.value = f; g.gain.setValueAtTime(.0001, now + delay); g.gain.exponentialRampToValueAtTime(gain, now + delay + .015); g.gain.exponentialRampToValueAtTime(.0001, now + delay + .18); o.connect(g).connect(audioCtx.destination); o.start(now + delay); o.stop(now + delay + .2) }) } catch (e) { } }
             function closeStampUnlock() { clearTimeout(unlockTimer); $('#unlockModal').hidden = true; document.body.style.overflow = '' }
             function showStampUnlock(countryId) { const country = countries.find(c => c[0] === countryId); if (!country) return; $('#unlockStamp').innerHTML = stampHTML(countryId, country[1], passport.countries[countryId], true); $('#unlockCountry').textContent = country[1]; $('#unlockModal').hidden = false; document.body.style.overflow = 'hidden'; $('#closeUnlock').focus(); stampSound(); if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { const box = $('#unlockModal .unlock-box'), colors = ['#ffd54f', '#ef5f67', '#35c990', '#5a8ff5']; for (let i = 0; i < 18; i++) { const bit = document.createElement('i'); bit.className = 'unlock-confetti'; bit.style.cssText = `left:50%;top:50%;background:${colors[i % 4]};--x:${Math.cos(i) * 120 * (.5 + Math.random())}px;--y:${Math.sin(i) * 120 * (.5 + Math.random())}px`; box.append(bit); setTimeout(() => bit.remove(), 1300) } } unlockTimer = setTimeout(closeStampUnlock, 1800) }
-            function resetPassport() { passport = defaultPassport(); savePassport(); renderPassport(); newStamps = 0; $('#newStamps').textContent = 'Keine neuen Stempel in dieser Runde.' }
+            function resetPassport() { passport = defaultPassport(); savePassport(); renderPassport(); newStamps = 0; $('#newStamps').textContent = 'No new stamps this round.' }
             function shuffle(a) { for (let i = a.length - 1; i; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]] } return a }
             function show(name) { Object.entries(screens).forEach(([k, v]) => v.hidden = k !== name) }
             const TOTAL_QUESTIONS = countries.length;
@@ -1572,11 +1569,11 @@
             function tone(kind) { if (!soundOn) return; try { audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)(); if (audioCtx.state === 'suspended') audioCtx.resume(); const notes = kind === 'good' ? [523, 659, 784] : kind === 'bad' ? [220, 165] : [523, 659, 784, 1047]; notes.forEach((f, i) => { const o = audioCtx.createOscillator(), g = audioCtx.createGain(); o.type = kind === 'bad' ? 'sawtooth' : 'sine'; o.frequency.value = f; g.gain.setValueAtTime(.0001, audioCtx.currentTime + i * .11); g.gain.exponentialRampToValueAtTime(.13, audioCtx.currentTime + i * .11 + .02); g.gain.exponentialRampToValueAtTime(.0001, audioCtx.currentTime + i * .11 + .18); o.connect(g).connect(audioCtx.destination); o.start(audioCtx.currentTime + i * .11); o.stop(audioCtx.currentTime + i * .11 + .2) }) } catch (e) { } }
             function start() { round = makeRound(); index = score = correct = combo = newStamps = 0; locked = false; $('#score').textContent = 0; show('game'); render() }
             function createChoices(item) { const selected = new Map([[item[1], item]]); const pool = shuffle(countries.slice()); for (const country of pool) { if (!selected.has(country[1])) selected.set(country[1], country); if (selected.size === 4) break } return shuffle([...selected.values()]) }
-            function render() { locked = false; const item = round[index]; $('#qCount').textContent = `Frage ${index + 1} / ${TOTAL_QUESTIONS}`; $('#bar').style.width = `${(index + 1) / TOTAL_QUESTIONS * 100}%`; $('#flag').innerHTML = flagSVG(item[0]); $('#flag').setAttribute('aria-label', `Flagge: ${item[1]}`); $('#feedback').textContent = ''; $('#feedback').className = 'feedback'; $('#combo').textContent = combo >= 2 ? `🔥 Combo x${combo}` : ''; const choices = createChoices(item); const box = $('#answers'); box.replaceChildren(); const rendered = new Set; for (const c of choices) { if (rendered.has(c[1])) continue; rendered.add(c[1]); const b = document.createElement('button'); b.className = 'answer'; b.textContent = c[1]; b.dataset.name = c[1]; b.addEventListener('click', () => answer(b, c[1] === item[1])); box.append(b) } $('#gameCard').style.animation = 'none'; requestAnimationFrame(() => $('#gameCard').style.animation = 'enter .45s cubic-bezier(.2,.8,.2,1)'); setTimeout(() => box.querySelector('button')?.focus(), 100) }
-            function answer(btn, isCorrect) { if (locked) return; locked = true; const currentItem = round[index], current = currentItem[1]; $$('.answer').forEach(b => { b.disabled = true; if (b.dataset.name === current) b.classList.add('correct') }); const card = $('#gameCard'), fb = $('#feedback'); let firstVisit = false; if (isCorrect) { score += 10; correct++; combo++; btn.classList.add('correct'); firstVisit = unlockCountryStamp(currentItem[0]); if (firstVisit) { newStamps++; setTimeout(() => showStampUnlock(currentItem[0]), 350) } else fb.innerHTML = '✔ &nbsp; +10 points<br>Correct! &nbsp; <small>Besuch +1</small>'; if (firstVisit) fb.innerHTML = '✔ &nbsp; +10 points<br>Correct!'; fb.className = 'feedback good'; card.classList.add('good-glow'); const p = document.createElement('span'); p.className = 'float-points'; p.textContent = '+10'; card.append(p); setTimeout(() => p.remove(), 1000); tone('good') } else { combo = 0; btn.classList.add('wrong'); fb.textContent = `Not quite. Das ist ${current}.`; fb.className = 'feedback bad'; card.classList.add('shake', 'bad-glow'); tone('bad') } $('#score').textContent = score; setTimeout(() => { closeStampUnlock(); card.classList.remove('shake', 'good-glow', 'bad-glow'); index++; index < TOTAL_QUESTIONS ? render() : finish() }, firstVisit ? 2250 : 1450) }
-            function finish() { show('end'); const mistakes = TOTAL_QUESTIONS - correct; let best = Number(storageGet('flagMatchBest') || 0); if (score > best) { best = score; storageSet('flagMatchBest', String(best)) } $('#headerBest').textContent = best; $('#correctStat').textContent = correct; $('#mistakeStat').textContent = mistakes; $('#percentStat').textContent = `${Math.round(correct / TOTAL_QUESTIONS * 100)}%`; $('#finalStat').textContent = score; $('#bestStat').textContent = best; $('#newStamps').textContent = newStamps ? `Neue Stempel: ${newStamps}` : 'Keine neuen Stempel in dieser Runde.'; updatePassportProgress(); tone('done'); confetti() }
+            function render() { locked = false; const item = round[index]; $('#qCount').textContent = `Question ${index + 1} / ${TOTAL_QUESTIONS}`; $('#bar').style.width = `${(index + 1) / TOTAL_QUESTIONS * 100}%`; $('#flag').innerHTML = flagSVG(item[0]); $('#flag').setAttribute('aria-label', `Flag: ${item[1]}`); $('#feedback').textContent = ''; $('#feedback').className = 'feedback'; $('#combo').textContent = combo >= 2 ? `🔥 Combo x${combo}` : ''; const choices = createChoices(item); const box = $('#answers'); box.replaceChildren(); const rendered = new Set; for (const c of choices) { if (rendered.has(c[1])) continue; rendered.add(c[1]); const b = document.createElement('button'); b.className = 'answer'; b.textContent = c[1]; b.dataset.name = c[1]; b.addEventListener('click', () => answer(b, c[1] === item[1])); box.append(b) } $('#gameCard').style.animation = 'none'; requestAnimationFrame(() => $('#gameCard').style.animation = 'enter .45s cubic-bezier(.2,.8,.2,1)'); setTimeout(() => box.querySelector('button')?.focus(), 100) }
+            function answer(btn, isCorrect) { if (locked) return; locked = true; const currentItem = round[index], current = currentItem[1]; $$('.answer').forEach(b => { b.disabled = true; if (b.dataset.name === current) b.classList.add('correct') }); const card = $('#gameCard'), fb = $('#feedback'); let firstVisit = false; if (isCorrect) { score += 10; correct++; combo++; btn.classList.add('correct'); firstVisit = unlockCountryStamp(currentItem[0]); if (firstVisit) { newStamps++; setTimeout(() => showStampUnlock(currentItem[0]), 350) } else fb.innerHTML = '✔ &nbsp; +10 points<br>Correct! &nbsp; <small>Visit +1</small>'; if (firstVisit) fb.innerHTML = '✔ &nbsp; +10 points<br>Correct!'; fb.className = 'feedback good'; card.classList.add('good-glow'); const p = document.createElement('span'); p.className = 'float-points'; p.textContent = '+10'; card.append(p); setTimeout(() => p.remove(), 1000); tone('good') } else { combo = 0; btn.classList.add('wrong'); fb.textContent = `Not quite. This is ${current}.`; fb.className = 'feedback bad'; card.classList.add('shake', 'bad-glow'); tone('bad') } $('#score').textContent = score; setTimeout(() => { closeStampUnlock(); card.classList.remove('shake', 'good-glow', 'bad-glow'); index++; index < TOTAL_QUESTIONS ? render() : finish() }, firstVisit ? 2250 : 1450) }
+            function finish() { show('end'); const mistakes = TOTAL_QUESTIONS - correct; let best = Number(storageGet('flagMatchBest') || 0); if (score > best) { best = score; storageSet('flagMatchBest', String(best)) } $('#headerBest').textContent = best; $('#correctStat').textContent = correct; $('#mistakeStat').textContent = mistakes; $('#percentStat').textContent = `${Math.round(correct / TOTAL_QUESTIONS * 100)}%`; $('#finalStat').textContent = score; $('#bestStat').textContent = best; $('#newStamps').textContent = newStamps ? `New stamps: ${newStamps}` : 'No new stamps this round.'; updatePassportProgress(); tone('done'); confetti() }
             function confetti() { const colors = ['#ffd54f', '#ef5f67', '#35c990', '#5a8ff5', '#b56cf0']; for (let i = 0; i < 70; i++) { const x = document.createElement('i'); x.className = 'confetti'; x.style.left = Math.random() * 100 + 'vw'; x.style.background = colors[i % colors.length]; x.style.setProperty('--d', 2.3 + Math.random() * 2 + 's'); x.style.setProperty('--r', Math.random() * 180 + 'deg'); x.style.animationDelay = Math.random() * .8 + 's'; document.body.append(x); setTimeout(() => x.remove(), 5000) } }
-            function speak() { if (!('speechSynthesis' in window)) return; try { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(round[index][1]); u.lang = 'de-DE'; u.rate = .85; speechSynthesis.speak(u) } catch (e) { } }
+            function speak() { if (!('speechSynthesis' in window)) return; try { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(round[index][1]); u.lang = 'en-US'; u.rate = .85; speechSynthesis.speak(u) } catch (e) { } }
             $('#startBtn').addEventListener('click', start); $('#againBtn').addEventListener('click', start); $('#homeBtn').addEventListener('click', () => { show('start'); updatePassportProgress() }); $('#speak').addEventListener('click', speak); $('#closeUnlock').addEventListener('click', closeStampUnlock); $('#resetPassportBtn').addEventListener('click', () => { $('#resetConfirm').hidden = false; $('#cancelReset').focus() }); $('#cancelReset').addEventListener('click', () => { $('#resetConfirm').hidden = true; $('#resetPassportBtn').focus() }); $('#confirmReset').addEventListener('click', () => { resetPassport(); $('#resetConfirm').hidden = true; $('#resetPassportBtn').focus() }); document.addEventListener('click', e => { const passportButton = e.target.closest('[data-passport]'); if (passportButton) openPassport(passportButton); if (e.target.closest('[data-close-passport]')) closePassport(); if (e.target === $('#passportModal')) closePassport(); if (e.target.closest('[data-sound]')) { soundOn = !soundOn; storageSet('flagMatchSound', soundOn ? 'on' : 'off'); updateSound(); if (soundOn) tone('good') } }); document.addEventListener('keydown', e => { const activeOverlay = [...$$('.overlay')].reverse().find(x => !x.hidden); if (activeOverlay) { if (e.key === 'Escape') { if (activeOverlay.id === 'resetConfirm') { $('#resetConfirm').hidden = true; $('#resetPassportBtn').focus() } else if (activeOverlay.id === 'passportModal') closePassport(); else closeStampUnlock(); e.preventDefault(); return } if (e.key === 'Tab') { const list = focusables(activeOverlay); if (!list.length) return; const first = list[0], last = list[list.length - 1]; if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault() } else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault() } } return } if (!screens.game.hidden && ['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp'].includes(e.key)) { const a = $$('.answer'), i = a.indexOf(document.activeElement), step = ['ArrowRight', 'ArrowDown'].includes(e.key) ? 1 : -1; a[(i + step + a.length) % a.length]?.focus(); e.preventDefault() } }); updateSound(); renderPassport();
             $('#headerBest').textContent = Number(storageGet('flagMatchBest') || 0);
         })();

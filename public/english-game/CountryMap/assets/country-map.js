@@ -3,7 +3,7 @@
 
   const API = window.ReisenProgress;
   const COUNTRIES = [
-    { id: 'de', name: 'Englishland', color: '#315f47' },
+    { id: 'de', name: 'Germany', color: '#315f47' },
     { id: 'at', name: 'Austria', color: '#c34c3c' },
     { id: 'ch', name: 'Switzerland', color: '#417446' },
     { id: 'fr', name: 'France', color: '#315986' },
@@ -14,12 +14,12 @@
     { id: 'us', name: 'the USA', color: '#59617f' }
   ];
   const ACHIEVEMENTS = {
-    firstFlight: ['Erster Flug', 'Die erste Country-Map-Mission geschafft.'],
-    threeInRow: ['Drei in Folge', 'Drei richtige Antworten in Folge.'],
-    worldExplorer: ['Weltentdecker', 'Eine Serie von fünf erreicht.'],
-    countryPro: ['Countriesprofi', 'Alle neun Countries in einer Reise erkannt.'],
-    globetrotter: ['Weltenbummler', 'Alle neun Countriesstempel gesammelt.'],
-    perfectFlight: ['Perfekter Flug', 'Alle neun Flugziele ohne Fehler erreicht.']
+    firstFlight: ['First Flight', 'Completed the first Country Map mission.'],
+    threeInRow: ['Three in a Row', 'Three correct answers in a row.'],
+    worldExplorer: ['World Explorer', 'Reached a streak of five.'],
+    countryPro: ['Country Pro', 'Recognised all nine countries in one journey.'],
+    globetrotter: ['Globetrotter', 'Collected all nine country stamps.'],
+    perfectFlight: ['Perfect Flight', 'Reached all nine destinations without mistakes.']
   };
   const GAME_CONFIG = {
     correctPoints: 100, mysteryPoints: 200,
@@ -30,10 +30,10 @@
     bonusChoiceThreshold: 3, maxBonusChoicesPerRun: 1,
     suitcaseThreshold: 3,
     suitcaseRewards: [
-      { id: 'points', title: '+50 Reisepunkte', copy: 'Ein Reisebonus für dein Profil.', points: 50 },
-      { id: 'double', title: 'Doppel-points', copy: 'Die nächste richtige Antwort zählt doppelt.' },
-      { id: 'shield', title: 'Combo-Schutz', copy: 'Ein Fehler unterbricht deine Serie nicht.' },
-      { id: 'travel', title: 'Reisebonus', copy: '+100 Spielpunkte und +25 Reisepunkte.', points: 25, gamePoints: 100 }
+      { id: 'points', title: '+50 travel points', copy: 'A travel bonus for your profile.', points: 50 },
+      { id: 'double', title: 'Double points', copy: 'The next correct answer is worth double.' },
+      { id: 'shield', title: 'Streak shield', copy: 'Ein Mistakes unterbricht deine Serie nicht.' },
+      { id: 'travel', title: 'Travel bonus', copy: '+100 game points and +25 travel points.', points: 25, gamePoints: 100 }
     ]
   };
 
@@ -100,13 +100,13 @@
   }
   function stampHTML(country, large = false) {
     const item = state.collections.passport.countries[country.id], turn = (COUNTRIES.indexOf(country) % 5 - 2) * 2;
-    return `<article class="country-stamp ${item.unlocked ? '' : 'locked'}" style="--stamp:${country.color};--turn:${turn}deg" aria-label="${escapeHTML(country.name)}: ${item.unlocked ? `${item.visits} Besuche` : 'noch nicht besucht'}">${flagSVG(country.id)}<strong>${escapeHTML(country.name)}</strong><small>${item.unlocked ? 'BESUCHT' : 'NOCH OFFEN'}</small>${item.unlocked ? `<small>${item.visits}× besucht</small>` : ''}</article>`;
+    return `<article class="country-stamp ${item.unlocked ? '' : 'locked'}" style="--stamp:${country.color};--turn:${turn}deg" aria-label="${escapeHTML(country.name)}: ${item.unlocked ? `${item.visits} visits` : 'not visited yet'}">${flagSVG(country.id)}<strong>${escapeHTML(country.name)}</strong><small>${item.unlocked ? 'VISITED' : 'LOCKED'}</small>${item.unlocked ? `<small>${item.visits}× visited</small>` : ''}</article>`;
   }
   function renderPassport() {
     syncUI();
     $('#reiseStampGrid').innerHTML = COUNTRIES.map(c => stampHTML(c)).join('');
     const all = visitedCount() === 9;
-    $('#passportMilestone').innerHTML = all ? '<b>Alle Countries entdeckt!</b> Das Countries-Meister-Abzeichen gehört dir. Der Goldene Reisepass wartet nach allen vier Spielen.' : 'Sammle alle neun Countriesstempel. Der Goldene Reisepass gehört zur gesamten Lesson 1.';
+    $('#passportMilestone').innerHTML = all ? '<b>All countries discovered!</b> The Country Master badge is yours. The Golden Passport awaits after all four games.' : 'Collect all nine country stamps. The Golden Passport covers all of Lesson 1.';
   }
 
   function showScreen(id) { $$('.reise-screen').forEach(screen => { screen.hidden = screen.id !== id; }); window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }
@@ -132,7 +132,7 @@
     flightPlane.style.setProperty('--lane', '50%');
     flightPlane.classList.remove('launching');
     $('#reiseFlag').innerHTML = flagSVG(country.id);
-    $('#reiseFlag').setAttribute('aria-label', `Flagge von ${country.name}`);
+    $('#reiseFlag').setAttribute('aria-label', `Flag of ${country.name}`);
     $('#mysteryLabel').hidden = !mystery;
     $('#conceal').hidden = !mystery;
     $('#conceal').style.opacity = mystery ? '1' : '0';
@@ -165,8 +165,8 @@
     $('#flightPlane').style.setProperty('--lane', `${12.5 + selectedLane * 25}%`);
     $('#flightPlane').classList.add('launching');
     $('#reiseCard').classList.add('is-flying');
-    $('#reiseFeedback').innerHTML = '<strong>Route gewählt – Anflug läuft …</strong>';
-    announce(`Route ${selectedLane + 1} gewählt. Das Flugzeug startet.`);
+    $('#reiseFeedback').innerHTML = '<strong>Route selected – approaching …</strong>';
+    announce(`Route ${selectedLane + 1} selected. The plane is taking off.`);
     setTimeout(() => resolveFlight(button, isCorrect, country, mystery, buttons), reducedMotion() ? 80 : 820);
   }
   function resolveFlight(button, isCorrect, country, mystery, buttons) {
@@ -179,7 +179,7 @@
       if (visit.firstVisit) { newStamps += 1; API.addXP(state, GAME_CONFIG.firstVisitXP); }
       const suitcase = API.updateSuitcase(state, true);
       $('#reiseCard').classList.add('flight-correct');
-      $('#reiseFeedback').innerHTML = `<div class="reward-lines"><strong>Tor getroffen!</strong><span>+${earnedGame} Flugmeilen</span><span>+${earnedRP} Reisepunkte</span><span>+${earnedXP}${visit.firstVisit ? ` + ${GAME_CONFIG.firstVisitXP}` : ''} XP</span>${visit.firstVisit ? '<span>Neuer Stempel!</span>' : ''}${combo === 3 ? '<span>⚡ Turbo aktiviert!</span>' : ''}</div>`;
+      $('#reiseFeedback').innerHTML = `<div class="reward-lines"><strong>Gate reached!</strong><span>+${earnedGame} flight miles</span><span>+${earnedRP} travel points</span><span>+${earnedXP}${visit.firstVisit ? ` + ${GAME_CONFIG.firstVisitXP}` : ''} XP</span>${visit.firstVisit ? '<span>New stamp!</span>' : ''}${combo === 3 ? '<span>⚡ Turbo aktiviert!</span>' : ''}</div>`;
       tone('correct'); celebrateSmall();
       unlockAt('firstFlight'); if (combo >= 3) unlockAt('threeInRow'); if (combo >= 5) unlockAt('worldExplorer');
       if (visitedCount() === 9) { unlockAt('globetrotter'); if (!state.collections.badges.includes('laender-meister')) { state.collections.badges.push('laender-meister'); API.save(state); } }
@@ -191,36 +191,36 @@
       button.classList.add('wrong');
       $('#reiseCard').classList.add('flight-wrong');
       const protectedCombo = activeBonus?.id === 'shield';
-      if (protectedCombo) { activeBonus = null; toast('Combo-Schutz', 'Deine Serie bleibt erhalten.'); } else { if (activeBonus?.id === 'double') toast('Reisebonus', 'Bonus verpasst. Deine Reise geht normal weiter.'); activeBonus = null; combo = 0; }
-      $('#reiseFeedback').innerHTML = `<strong>Knapp vorbeigeflogen!</strong>&nbsp; Das richtige Tor ist ${escapeHTML(country.name)}.`; tone('wrong');
+      if (protectedCombo) { activeBonus = null; toast('Streak shield', 'Your streak is protected.'); } else { if (activeBonus?.id === 'double') toast('Travel bonus', 'Bonus missed. Your journey continues normally.'); activeBonus = null; combo = 0; }
+      $('#reiseFeedback').innerHTML = `<strong>Not quite!</strong>&nbsp; The correct gate is ${escapeHTML(country.name)}.`; tone('wrong');
     }
-    API.save(state); $('#reiseScore').textContent = format(score); $('#conceal').style.opacity = '0'; updateCombo(); syncUI(); $('#reiseNext').hidden = false; $('#reiseNext').focus(); announce(isCorrect ? `Correctes Flugziel: ${country.name}.` : `Knapp vorbei. Das richtige Flugziel ist ${country.name}.`);
+    API.save(state); $('#reiseScore').textContent = format(score); $('#conceal').style.opacity = '0'; updateCombo(); syncUI(); $('#reiseNext').hidden = false; $('#reiseNext').focus(); announce(isCorrect ? `Correct destination: ${country.name}.` : `Not quite. The correct destination is ${country.name}.`);
   }
   function updateCombo() {
-    $('#reiseCombo').textContent = combo >= 5 ? 'Weltentdecker!' : combo >= 2 ? `Serie x${combo}` : 'Serie starten';
-    $('#comboHelp').textContent = combo ? `${Math.max(0, 3 - state.bonuses.suitcaseProgress)} richtige bis zum Koffer-Bonus.` : 'Drei richtige Antworten finden den Koffer.';
+    $('#reiseCombo').textContent = combo >= 5 ? 'World Explorer!' : combo >= 2 ? `Streak x${combo}` : 'Start a streak';
+    $('#comboHelp').textContent = combo ? `${Math.max(0, 3 - state.bonuses.suitcaseProgress)} correct answers to the suitcase bonus.` : 'Three correct answers unlock the suitcase.';
   }
   function nextQuestion() { closeModal($('#reiseReward')); if (combo >= GAME_CONFIG.bonusChoiceThreshold && bonusChoices < GAME_CONFIG.maxBonusChoicesPerRun && index < 8) { showRouteChoice(); return; } index += 1; if (index < 9) renderQuestion(); else arriveAndFinish(); }
   function showRouteChoice() {
     bonusChoices += 1;
-    $('#rewardKicker').textContent = 'REISEBONUS · DEINE WAHL'; $('#rewardHeading').textContent = 'Wie reist du weiter?';
+    $('#rewardKicker').textContent = 'TRAVEL BONUS · YOUR CHOICE'; $('#rewardHeading').textContent = 'How will you continue?';
     $('#rewardImage').innerHTML = '<img src="assets/country-map/plane.svg" alt="Flugzeug auf der Reiseroute">';
-    $('#rewardCopy').innerHTML = '<div class="button-row"><button class="reise-button secondary" id="safeRoute">Sicher weiter</button><button class="reise-button primary" id="riskRoute">Bonus riskieren</button></div><small>Sicher: Deine Serie ist einmal geschützt. Risiko: Die nächste richtige Antwort zählt doppelt.</small>';
+    $('#rewardCopy').innerHTML = '<div class="button-row"><button class="reise-button secondary" id="safeRoute">Safe route</button><button class="reise-button primary" id="riskRoute">Risk for a bonus</button></div><small>Safe: your streak is protected once. Risk: The next correct answer is worth double.</small>';
     openModal($('#reiseReward'), $('#reiseNext'));
-    $('#safeRoute').onclick = () => { activeBonus = { id: 'shield' }; closeModal($('#reiseReward')); index += 1; renderQuestion(); announce('Sichere Route gewählt. Deine Serie ist geschützt.'); };
-    $('#riskRoute').onclick = () => { activeBonus = { id: 'double' }; closeModal($('#reiseReward')); index += 1; renderQuestion(); announce('Bonusrute gewählt. Die nächste richtige Antwort zählt doppelt.'); };
+    $('#safeRoute').onclick = () => { activeBonus = { id: 'shield' }; closeModal($('#reiseReward')); index += 1; renderQuestion(); announce('Safe route selected. Your streak is protected.'); };
+    $('#riskRoute').onclick = () => { activeBonus = { id: 'double' }; closeModal($('#reiseReward')); index += 1; renderQuestion(); announce('Bonus route selected. The next correct answer is worth double.'); };
   }
   function finishGame() {
     const game = state.lesson1.games.countryMap, oldBest = game.bestScore;
     game.bestScore = Math.max(game.bestScore, score); game.bestCombo = Math.max(game.bestCombo, bestCombo);
     const completion = API.completeGame(state, 'countryMap', score); let bonusText = '';
-    if (!game.completionRewardClaimed) { game.completionRewardClaimed = true; API.addPoints(state, GAME_CONFIG.completionPoints); API.addXP(state, GAME_CONFIG.completionXP); bonusText = `Erster Abschluss: +${GAME_CONFIG.completionPoints} Reisepunkte · +${GAME_CONFIG.completionXP} XP`; }
+    if (!game.completionRewardClaimed) { game.completionRewardClaimed = true; API.addPoints(state, GAME_CONFIG.completionPoints); API.addXP(state, GAME_CONFIG.completionXP); bonusText = `Erster Abschluss: +${GAME_CONFIG.completionPoints} travel points · +${GAME_CONFIG.completionXP} XP`; }
     if (correct === 9) unlockAt('countryPro');
     if (mistakes === 0) unlockAt('perfectFlight');
     API.save(state); syncUI();
     $('#finalCorrect').textContent = `${correct} / 9`; $('#finalScore').textContent = format(score); $('#finalCombo').textContent = `x${bestCombo}`; $('#finalStamps').textContent = newStamps;
     const missingStamps = COUNTRIES.length - visitedCount();
-    $('#recordText').textContent = missingStamps ? `Noch ${missingStamps} Countries-Stempel sammeln.` : score > oldBest ? 'Alle Stempel gesammelt · neuer Rekord!' : `Alle Stempel gesammelt · Best score: ${format(game.bestScore)}`;
+    $('#recordText').textContent = missingStamps ? `Collect ${missingStamps} more country stamps.` : score > oldBest ? 'All stamps collected · new record!' : `All stamps collected · Best score: ${format(game.bestScore)}`;
     $('#finishBonus').textContent = bonusText; showScreen('reiseEnd'); tone('complete'); confetti(45);
   }
 
@@ -228,7 +228,7 @@
     $('#reiseCard').classList.add('arriving');
     $('#arrivalBanner').hidden = false;
     $('#reiseNext').hidden = true;
-    announce('Ziel erreicht. Alle neun Countries wurden angeflogen.');
+    announce('Destination reached. All nine countries were visited.');
     setTimeout(() => { $('#arrivalBanner').hidden = true; finishGame(); }, reducedMotion() ? 120 : 1250);
   }
 
@@ -238,9 +238,9 @@
   function openSuitcase() {
     const reward = GAME_CONFIG.suitcaseRewards[Math.floor(Math.random() * GAME_CONFIG.suitcaseRewards.length)]; activeBonus = reward;
     if (reward.points) API.addPoints(state, reward.points); if (reward.gamePoints) score += reward.gamePoints;
-    $('#rewardKicker').textContent = 'BONUS-KOFFER GEFUNDEN'; $('#rewardHeading').textContent = reward.title; $('#rewardImage').innerHTML = '<img src="assets/country-map/suitcase.svg" alt="Geöffneter Bonus-Koffer">'; $('#rewardCopy').textContent = reward.copy; openModal($('#reiseReward'), $('#reiseNext')); syncUI(); tone('complete');
+    $('#rewardKicker').textContent = 'BONUS SUITCASE FOUND'; $('#rewardHeading').textContent = reward.title; $('#rewardImage').innerHTML = '<img src="assets/country-map/suitcase.svg" alt="Opened bonus suitcase">'; $('#rewardCopy').textContent = reward.copy; openModal($('#reiseReward'), $('#reiseNext')); syncUI(); tone('complete');
   }
-  function showStampReward(country) { $('#rewardKicker').textContent = 'NEUER STEMPEL'; $('#rewardHeading').textContent = `${country.name} besucht!`; $('#rewardImage').innerHTML = stampHTML(country, true); $('#rewardCopy').textContent = `+${GAME_CONFIG.firstVisitXP} Reise-XP für deinen ersten Besuch.`; openModal($('#reiseReward'), $('#reiseNext')); }
+  function showStampReward(country) { $('#rewardKicker').textContent = 'NEW STAMP'; $('#rewardHeading').textContent = `${country.name} visited!`; $('#rewardImage').innerHTML = stampHTML(country, true); $('#rewardCopy').textContent = `+${GAME_CONFIG.firstVisitXP} travel XP for your first visit.`; openModal($('#reiseReward'), $('#reiseNext')); }
   function toast(title, copy) { const el = document.createElement('div'); el.className = 'reise-toast'; el.innerHTML = `<b>${escapeHTML(title)}</b><span>${escapeHTML(copy)}</span>`; $('#reiseToasts').append(el); setTimeout(() => el.remove(), 4300); }
   function celebrateSmall() { if (matchMedia('(prefers-reduced-motion: reduce)').matches) return; $('#reiseCard').animate([{ transform: 'scale(1)' }, { transform: 'scale(1.008)' }, { transform: 'scale(1)' }], { duration: 420 }); }
   function confetti(count) { if (matchMedia('(prefers-reduced-motion: reduce)').matches) return; const colors = ['#e85b3d','#e9a925','#278f8e','#103b5d']; for (let i=0;i<count;i++) { const bit=document.createElement('i'); bit.style.cssText=`position:fixed;z-index:90;left:${Math.random()*100}vw;top:-20px;width:9px;height:15px;background:${colors[i%4]};animation:confetti-fall ${2+Math.random()*2}s linear forwards`; document.body.append(bit); setTimeout(()=>bit.remove(),4200); } }

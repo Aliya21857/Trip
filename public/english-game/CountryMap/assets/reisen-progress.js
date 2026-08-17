@@ -7,10 +7,10 @@
   const GAME_IDS = ['countryMap', 'dialoge', 'saetze', 'woher'];
   const LEVELS = [
     { level: 1, name: 'Starter', xp: 0 },
-    { level: 2, name: 'Entdecker', xp: 250 },
-    { level: 3, name: 'Reisender', xp: 650 },
-    { level: 4, name: 'Sprachentdecker', xp: 1200 },
-    { level: 5, name: 'Englishprofi', xp: 2000 }
+    { level: 2, name: 'Explorer', xp: 250 },
+    { level: 3, name: 'Traveller', xp: 650 },
+    { level: 4, name: 'Language Explorer', xp: 1200 },
+    { level: 5, name: 'English Pro', xp: 2000 }
   ];
 
   const clone = value => JSON.parse(JSON.stringify(value));
