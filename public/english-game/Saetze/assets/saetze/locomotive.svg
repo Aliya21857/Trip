@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180" role="img" aria-labelledby="title">
+  <title id="title">Reisen Lokomotive</title>
+  <defs><linearGradient id="body" x2="0" y2="1"><stop stop-color="#0d8790"/><stop offset="1" stop-color="#07586b"/></linearGradient><linearGradient id="gold"><stop stop-color="#ffd963"/><stop offset="1" stop-color="#e99b18"/></linearGradient></defs>
+  <path d="M46 62h146c30 0 52 18 61 45l8 25H35l5-53c1-10 3-17 6-17z" fill="url(#body)" stroke="#073c4a" stroke-width="7"/>
+  <path d="M91 22h83v80H91z" fill="#f7e8c5" stroke="#073c4a" stroke-width="7"/><path d="M106 38h51v37h-51z" fill="#8ed6df" stroke="#073c4a" stroke-width="5"/>
+  <path d="M180 73h40l18 34h-58z" fill="#e8471e" stroke="#073c4a" stroke-width="6"/><path d="M60 32h25v53H60z" fill="#e8471e" stroke="#073c4a" stroke-width="6"/><path d="M49 25h47v15H49z" fill="url(#gold)" stroke="#073c4a" stroke-width="5"/>
+  <path d="M25 126h249v19H25z" fill="url(#gold)" stroke="#073c4a" stroke-width="6"/><circle cx="88" cy="145" r="25" fill="#17383e" stroke="#f5aa19" stroke-width="8"/><circle cx="211" cy="145" r="25" fill="#17383e" stroke="#f5aa19" stroke-width="8"/>
+  <circle cx="246" cy="91" r="11" fill="#fff8bf"/><path d="M268 132h25" stroke="#073c4a" stroke-width="9" stroke-linecap="round"/>
+</svg>

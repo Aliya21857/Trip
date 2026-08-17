@@ -1,0 +1,257 @@
+/* Phone viewport layout: keep each active screen inside the visible viewport. */
+@media (max-width:600px){
+  html,body{width:100%;min-width:0!important;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none}
+  body{min-height:100dvh}
+  img,svg,canvas{max-width:100%}
+  main,.app,.reisen-shell,.reise-main,.reise-screen,.screen,.center-column,.question-column{min-width:0;max-width:100%}
+  button,a{touch-action:manipulation}
+  .reisen-audio-popover{max-height:calc(100dvh - 84px);overflow:auto}
+
+  /* Homepage */
+  body[data-music-theme="home"] .topbar{height:60px}
+  body[data-music-theme="home"] .nav{height:60px}
+  body[data-music-theme="home"] .wordmark{font-size:1.8rem}
+  body[data-music-theme="home"] .nav-start{padding:8px 12px;font-size:.78rem}
+  body[data-music-theme="home"] .reisen-audio-home{top:10px!important;right:82px!important;left:auto!important;gap:3px}
+  body[data-music-theme="home"] .reisen-audio-button{width:34px;min-width:34px;min-height:38px;padding:5px}
+  body[data-music-theme="home"] .hero,body[data-music-theme="home"] .level,body[data-music-theme="home"] .benefits,body[data-music-theme="home"] .banner,body[data-music-theme="home"] .footer{display:none}
+  body[data-music-theme="home"] main{height:calc(100dvh - 60px);overflow-x:hidden;overflow-y:auto}
+  body[data-music-theme="home"] .games-section{height:100%;padding:6px 0;margin:0}
+  body[data-music-theme="home"] .games{width:100%;height:100%;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:6px}
+  body[data-music-theme="home"] .card{min-height:0;border-radius:10px;transform:none!important}
+  body[data-music-theme="home"] .num{top:5px;left:5px;width:30px;height:30px;border-radius:7px;font-size:.9rem}
+  body[data-music-theme="home"] .art{height:auto;min-height:0;flex:1 1 42%;background-size:200% 200%}
+  body[data-music-theme="home"] .card-body{flex:0 1 auto;min-height:0;padding:5px 6px 7px}
+  body[data-music-theme="home"] .station{font-size:.48rem;letter-spacing:.06em}
+  body[data-music-theme="home"] .card h2{margin:1px 0 3px;font-size:clamp(.95rem,4.5vw,1.25rem)}
+  body[data-music-theme="home"] .card-desc{min-height:0;margin:0 0 4px;font-size:clamp(.56rem,2.4vw,.68rem);line-height:1.2;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+  body[data-music-theme="home"] .card-actions{min-width:0;grid-template-columns:minmax(0,1fr);gap:3px}
+  body[data-music-theme="home"] .card-cta{width:100%;min-width:0;min-height:29px;padding:3px 1px;border-width:1px;border-radius:7px;font-size:.65rem;white-space:nowrap;overflow:hidden}
+  body[data-music-theme="home"] .card-cta.secondary{font-size:.58rem}
+  body[data-music-theme="home"] .instructions-overlay{padding:6px}
+  body[data-music-theme="home"] .instructions-modal{max-height:calc(100dvh - 12px);padding:14px 12px}
+  body[data-music-theme="home"] .modal-head{grid-template-columns:42px 1fr;gap:8px}
+  body[data-music-theme="home"] .modal-icon{width:42px;height:42px}
+  body[data-music-theme="home"] .modal-head h2{font-size:1.5rem}
+  body[data-music-theme="home"] .instructions-modal h3{margin:8px 0 6px;font-size:1.1rem}
+  body[data-music-theme="home"] .instruction-steps{gap:5px}
+  body[data-music-theme="home"] .instruction-step{grid-template-columns:28px 1fr;gap:6px;padding:6px}
+  body[data-music-theme="home"] .instruction-step b{width:26px;height:26px;font-size:.7rem}
+  body[data-music-theme="home"] .instruction-step strong{font-size:.77rem}
+  body[data-music-theme="home"] .instruction-step span{font-size:.68rem;line-height:1.2}
+  body[data-music-theme="home"] .modal-goal{margin:6px 0;padding:7px 10px;font-size:.72rem}
+  body[data-music-theme="home"] .instructions-modal>p{display:none}
+  body[data-music-theme="home"] .modal-actions{margin-top:7px;gap:5px;flex-direction:row}
+  body[data-music-theme="home"] .modal-action{min-height:38px;padding:7px 10px;font-size:.76rem}
+
+  /* Shared game chrome */
+  body:not([data-music-theme="home"]) .global-header,body[data-music-theme="countryMap"] .reisen-header{height:58px!important;min-height:58px!important;max-height:58px!important;padding:4px 7px!important;overflow:visible}
+  body:not([data-music-theme="home"]) .brand b,body:not([data-music-theme="home"]) .logo{font-size:25px!important}
+  body:not([data-music-theme="home"]) .brand small,body:not([data-music-theme="home"]) .logo small,body[data-music-theme="countryMap"] .reise-brand:after{display:none!important}
+  body:not([data-music-theme="home"]) .global-stat,body:not([data-music-theme="home"]) .head-cell:not(.logo-cell):not(.head-actions),body[data-music-theme="countryMap"] .reise-station,body[data-music-theme="countryMap"] .reise-tools>span{display:none!important}
+  body:not([data-music-theme="home"]) .reisen-audio-button{width:36px;min-width:36px;min-height:38px;height:38px;padding:4px}
+  body:not([data-music-theme="home"]) .reisen-audio-controls{gap:3px}
+  body:not([data-music-theme="home"]) .reisen-audio-label{display:none!important}
+  body:not([data-music-theme="home"]) .square-btn,body:not([data-music-theme="home"]) .icon-btn{width:40px!important;min-width:40px!important;height:40px!important}
+  body:not([data-music-theme="home"]) .journey,body:not([data-music-theme="home"]) .bottom-route{display:none!important}
+  body:not([data-music-theme="home"]) .overlay{padding:6px!important}
+  body:not([data-music-theme="home"]) .modal{max-height:calc(100dvh - 12px)!important;overflow:auto;padding:14px!important}
+
+  /* Country Map */
+  body[data-music-theme="countryMap"] .reisen-header{display:flex!important;align-items:center!important;gap:4px!important}
+  body[data-music-theme="countryMap"] .reisen-header__stat,body[data-music-theme="countryMap"] .reisen-header__action--passport{display:none!important}
+  body[data-music-theme="countryMap"] .reisen-header__actions{display:flex!important;align-items:center!important;gap:3px!important;margin-left:auto!important;min-width:0!important}
+  body[data-music-theme="countryMap"] .reisen-header__action{width:40px!important;min-width:40px!important;height:40px!important;min-height:40px!important;padding:4px!important}
+  body[data-music-theme="countryMap"] .reisen-header__action span{display:none!important}
+  body[data-music-theme="countryMap"] .reise-brand{font-size:1.35rem}
+  body[data-music-theme="countryMap"] .reise-main{width:100%;height:calc(100dvh - 58px);padding:5px!important;overflow-x:hidden;overflow-y:auto}
+  body[data-music-theme="countryMap"] .reise-screen{min-height:100%;height:auto;overflow:visible}
+  body[data-music-theme="countryMap"] .start-layout{height:100%;display:block}
+  body[data-music-theme="countryMap"] .map-card{display:none}
+  body[data-music-theme="countryMap"] .intro-card{height:100%;min-height:0;padding:14px!important;display:flex;flex-direction:column;justify-content:center}
+  body[data-music-theme="countryMap"] .intro-card h1{font-size:clamp(1.7rem,8vw,2.4rem);margin:6px 0}
+  body[data-music-theme="countryMap"] .button-row{display:grid;grid-template-columns:1fr;gap:5px}
+  body[data-music-theme="countryMap"] .button-row>*{width:100%;min-width:0}
+  body[data-music-theme="countryMap"] .status-grid{grid-template-columns:1fr 1fr;gap:5px;margin:6px 0}
+  body[data-music-theme="countryMap"] .status-grid>*{padding:6px!important}
+  body[data-music-theme="countryMap"] .play-layout{height:100%;display:block}
+  body[data-music-theme="countryMap"] .journey-panel,body[data-music-theme="countryMap"] .passport-side{display:none!important}
+  body[data-music-theme="countryMap"] .question-column{height:100%;display:flex;flex-direction:column}
+  body[data-music-theme="countryMap"] .mission-route{height:42px;min-height:42px;margin:0 0 4px;padding:4px 7px;grid-template-columns:100px 1fr}
+  body[data-music-theme="countryMap"] .mission-route>span{padding:5px;font-size:.72rem}
+  body[data-music-theme="countryMap"] .quiz-card{flex:1;min-height:0;padding:7px 10px;border-width:4px;overflow:visible}
+  body[data-music-theme="countryMap"] .quiz-card h2{margin:3px 0;font-size:1.15rem}
+  body[data-music-theme="countryMap"] .reise-flag-wrap{width:min(190px,55%);margin:4px auto}
+  body[data-music-theme="countryMap"] .reise-answers{grid-template-columns:1fr 1fr;gap:5px;margin-top:5px}
+  body[data-music-theme="countryMap"] .reise-answer{min-height:42px;padding:5px;font-size:.82rem}
+  body[data-music-theme="countryMap"] .reise-feedback{min-height:0;margin:4px 0;padding:5px;font-size:.75rem}
+  body[data-music-theme="countryMap"] .game-footer{margin-top:4px;gap:5px}
+  body[data-music-theme="countryMap"] .game-footer>span{padding:5px;font-size:.7rem}
+  body[data-music-theme="countryMap"] .reise-button{min-height:38px;padding:6px 10px}
+
+  /* Dialoge */
+  body[data-music-theme="dialoge"] .app{height:100dvh;padding:0!important;overflow:hidden}
+  body[data-music-theme="dialoge"] main{height:calc(100dvh - 58px);overflow-x:hidden;overflow-y:auto}
+  body[data-music-theme="dialoge"] .screen{min-height:100%;height:auto;overflow:visible}
+  body[data-music-theme="dialoge"] .start-screen{min-height:0;padding:5px}
+  body[data-music-theme="dialoge"] .start-ticket{width:100%;height:100%;min-height:0;padding:14px 12px 42%;justify-content:center}
+  body[data-music-theme="dialoge"] .start-ticket:after{left:12px;right:12px;bottom:10px;height:38%;border-width:4px}
+  body[data-music-theme="dialoge"] .start-ticket h1{font-size:2rem;margin:5px 0}
+  body[data-music-theme="dialoge"] .start-ticket h2{margin:0 0 5px}
+  body[data-music-theme="dialoge"] .start-ticket p:not(.eyebrow){font-size:.82rem;line-height:1.25;margin:4px 0}
+  body[data-music-theme="dialoge"] .start-ticket>*{max-width:100%;overflow-wrap:anywhere}
+  body[data-music-theme="dialoge"] .mission-strip{height:38px;margin:3px;padding:3px 7px}
+  body[data-music-theme="dialoge"] .game-layout{height:calc(100% - 44px);display:block}
+  body[data-music-theme="dialoge"] .left-panel,body[data-music-theme="dialoge"] .right-column{display:none!important}
+  body[data-music-theme="dialoge"] .center-column{height:100%;display:flex;flex-direction:column}
+  body[data-music-theme="dialoge"] .question-card{flex:1;min-height:0;padding:6px 9px;overflow:hidden}
+  body[data-music-theme="dialoge"] .question-card>h2,body[data-music-theme="dialoge"] .instruction{display:none}
+  body[data-music-theme="dialoge"] .question-top{min-height:34px}
+  body[data-music-theme="dialoge"] .listen-btn{padding:6px 9px}
+  body[data-music-theme="dialoge"] .speech-row{gap:5px;margin:3px 0}
+  body[data-music-theme="dialoge"] .avatar{width:45px;height:45px}
+  body[data-music-theme="dialoge"] .speech{padding:8px 10px;font-size:.9rem}
+  body[data-music-theme="dialoge"] .answers{gap:5px;margin-top:6px}
+  body[data-music-theme="dialoge"] .answer{min-height:42px;padding:6px 32px 6px 39px;font-size:.82rem}
+  body[data-music-theme="dialoge"] .answer:before{left:10px;width:19px;height:19px}
+  body[data-music-theme="dialoge"] .feedback.good,body[data-music-theme="dialoge"] .feedback.bad{margin-top:4px;padding:5px;font-size:.72rem}
+  body[data-music-theme="dialoge"] .controls{height:82px;margin:3px;gap:4px;display:grid;grid-template-columns:1fr 1fr}
+  body[data-music-theme="dialoge"] .button{min-height:38px;padding:3px 6px;font-size:.72rem;border-radius:8px}
+
+  /* Sätze */
+  body[data-music-theme="saetze"] .app{height:100dvh;padding:0!important;overflow:hidden}
+  body[data-music-theme="saetze"] main{height:calc(100dvh - 58px);overflow-x:hidden;overflow-y:auto}
+  body[data-music-theme="saetze"] .screen{min-height:100%;height:auto;overflow:visible}
+  body[data-music-theme="saetze"] .start-screen{padding:5px}
+  body[data-music-theme="saetze"] .start-ticket{width:100%;height:100%;padding:12px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  body[data-music-theme="saetze"] .start-preview{display:none}
+  body[data-music-theme="saetze"] .start-copy{width:100%;min-width:0;text-align:center;overflow:hidden;overflow-wrap:anywhere}
+  body[data-music-theme="saetze"] .start-copy h1{font-size:2rem;margin:4px 0}
+  body[data-music-theme="saetze"] .start-copy h2,body[data-music-theme="saetze"] .start-copy p{margin:4px 0}
+  body[data-music-theme="saetze"] .mission-steps{gap:3px;margin:5px 0}
+  body[data-music-theme="saetze"] .mission-strip{height:42px;margin:3px;padding:4px;grid-template-columns:90px 1fr}
+  body[data-music-theme="saetze"] .game-layout{height:calc(100% - 48px);display:block}
+  body[data-music-theme="saetze"] .left-panel,body[data-music-theme="saetze"] .right-column{display:none!important}
+  body[data-music-theme="saetze"] .center-column{height:100%}
+  body[data-music-theme="saetze"] .puzzle-card{height:100%;min-height:0;padding:7px 9px;border-width:4px;overflow:hidden}
+  body[data-music-theme="saetze"] .puzzle-card h2{margin:3px 0;font-size:1rem}
+  body[data-music-theme="saetze"] .task-copy,body[data-music-theme="saetze"] .grammar-note{font-size:.7rem;margin:3px 0}
+  body[data-music-theme="saetze"] .answer-zone{min-height:50px;padding:4px;gap:4px}
+  body[data-music-theme="saetze"] .word-bank{gap:4px;margin:5px 0}
+  body[data-music-theme="saetze"] .word-piece{padding:6px 8px;font-size:.76rem}
+  body[data-music-theme="saetze"] .controls{gap:4px;margin-top:4px;display:grid;grid-template-columns:1fr 1fr}
+  body[data-music-theme="saetze"] .button{min-height:36px;padding:4px 6px;font-size:.7rem}
+  body[data-music-theme="saetze"] .feedback{margin-top:4px;padding:5px;font-size:.7rem}
+
+  /* Woher */
+  body[data-music-theme="woher"] .reisen-shell{height:100dvh;min-height:0;overflow:hidden}
+  body[data-music-theme="woher"] .global-header{grid-template-columns:1fr auto!important}
+  body[data-music-theme="woher"] .logo-cell{grid-column:auto;border:0}
+  body[data-music-theme="woher"] .head-actions{display:flex!important}
+  body[data-music-theme="woher"] .case-route{height:42px;margin:3px;padding:3px 7px;border-radius:9px}
+  body[data-music-theme="woher"] .route-title{font-size:.72rem}
+  body[data-music-theme="woher"] .station-layout{height:calc(100dvh - 103px);padding:3px 5px;display:block;overflow-x:hidden;overflow-y:auto}
+  body[data-music-theme="woher"] .left-panel,body[data-music-theme="woher"] .right-panel{display:none!important}
+  body[data-music-theme="woher"] .center-card{height:100%;min-height:0;border-width:4px;overflow:hidden}
+  body[data-music-theme="woher"] .case-inner{height:100%;padding:6px 8px;overflow:hidden}
+  body[data-music-theme="woher"] .task-badge,body[data-music-theme="woher"] .mystery-chip{padding:5px 7px;font-size:.66rem}
+  body[data-music-theme="woher"] .prompt-wrap{padding:2px}
+  body[data-music-theme="woher"] .prompt-wrap h2{font-size:1.1rem;margin:4px 0}
+  body[data-music-theme="woher"] .prompt-wrap p{font-size:.7rem}
+  body[data-music-theme="woher"] .context-row{gap:7px;margin:4px auto}
+  body[data-music-theme="woher"] .person-badge,body[data-music-theme="woher"] .case-emblem{width:52px;height:52px}
+  body[data-music-theme="woher"] .country-card{gap:5px;padding:4px 7px;font-size:.78rem}
+  body[data-music-theme="woher"] .flag-art,body[data-music-theme="woher"] .flag-image{width:46px!important;height:31px}
+  body[data-music-theme="woher"] .sentence{padding:7px;font-size:1rem}
+  body[data-music-theme="woher"] .choices{grid-template-columns:1fr 1fr;gap:5px;margin-top:6px}
+  body[data-music-theme="woher"] .choice{min-height:42px;padding:5px 7px;font-size:.75rem}
+  body[data-music-theme="woher"] .choice .num{width:22px;height:22px;margin-right:4px}
+  body[data-music-theme="woher"] .builder-answer{min-height:46px;padding:4px}
+  body[data-music-theme="woher"] .word-bank{gap:4px;margin:5px 0}
+  body[data-music-theme="woher"] .word{padding:6px 8px;font-size:.74rem}
+  body[data-music-theme="woher"] .builder-actions{margin-top:5px!important;gap:4px}
+  body[data-music-theme="woher"] .btn{padding:7px 8px;font-size:.7rem}
+  body[data-music-theme="woher"] .feedback{margin-top:5px;padding:6px;font-size:.7rem}
+  body[data-music-theme="woher"] .feedback-title{font-size:.9rem}
+  body[data-music-theme="woher"] .feedback.good .feedback-actions{position:static;transform:none;width:auto;padding:4px;grid-template-columns:1fr 1fr}
+  body[data-music-theme="woher"] .modal .start-pass{height:95px}
+  body[data-music-theme="woher"] .modal .intro-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:8px 0}
+  body[data-music-theme="woher"] .modal .intro-steps div{min-width:0;max-width:100%;padding:5px 1px;font-size:.58rem;overflow:hidden;overflow-wrap:anywhere;word-break:break-word}
+  body[data-music-theme="woher"] .modal .intro-asset{width:34px;height:34px}
+
+  /* Koffer-Chaos: override the legacy Woher card layout loaded after game CSS. */
+  body[data-music-theme="woher"]{height:100dvh!important;min-height:0!important;overflow:hidden!important}
+  body[data-music-theme="woher"] .reisen-shell{height:100dvh!important;min-height:0!important;overflow:hidden!important}
+  body[data-music-theme="woher"] .case-route{height:42px!important;min-height:42px!important;margin:3px!important;padding:3px 7px!important}
+  body[data-music-theme="woher"] .station-layout.baggage-world{height:calc(100dvh - 103px)!important;min-height:0!important;padding:3px 5px!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
+  body[data-music-theme="woher"] .loading-panel{display:flex!important;flex:0 0 54px!important;height:54px!important;min-height:54px!important;align-items:center!important;justify-content:center!important;padding:4px!important;gap:10px!important;overflow:hidden!important}
+  body[data-music-theme="woher"] .loading-panel>.station-ribbon,body[data-music-theme="woher"] .loading-panel .airport-sign,body[data-music-theme="woher"] .loading-panel .airport-window,body[data-music-theme="woher"] .loading-panel .loaded-stack,body[data-music-theme="woher"] .loading-panel .cargo-door,body[data-music-theme="woher"] .loading-panel .queue{display:none!important}
+  body[data-music-theme="woher"] .loading-panel h3{margin:0!important;font-size:.72rem!important}
+  body[data-music-theme="woher"] .loading-panel>strong{font-size:1rem!important}
+  body[data-music-theme="woher"] .sorting-hall{display:flex!important;flex:1 1 auto!important;height:auto!important;min-height:0!important;flex-direction:column!important;overflow:hidden!important}
+  body[data-music-theme="woher"] .conveyor-field{height:105px!important;min-height:105px!important;flex:0 0 105px!important}
+  body[data-music-theme="woher"] .baggage-console{display:flex!important;flex:1 1 auto!important;width:calc(100% - 10px)!important;height:auto!important;min-height:0!important;margin:3px auto!important;flex-direction:column!important;overflow:hidden!important}
+  body[data-music-theme="woher"] .baggage-console .case-inner{height:auto!important;min-height:0!important;flex:1 1 auto!important;padding:4px 7px!important;overflow:hidden!important}
+  body[data-music-theme="woher"] .right-panel{display:none!important}
+}
+
+@media (max-width:600px) and (max-height:680px){
+  body[data-music-theme="home"] .card-desc{display:-webkit-box;margin-bottom:2px;font-size:.52rem;line-height:1.12;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
+  body[data-music-theme="home"] .art{flex-basis:45%}
+  body[data-music-theme="dialoge"] .mission-route{display:none}
+  body[data-music-theme="dialoge"] .mission-strip{justify-content:space-between}
+  body[data-music-theme="dialoge"] .answer{min-height:36px}
+  body[data-music-theme="saetze"] .task-copy,body[data-music-theme="saetze"] .grammar-note{display:none}
+  body[data-music-theme="woher"] .prompt-wrap p{display:none}
+}
+
+@media (max-height:500px) and (orientation:landscape){
+  html,body{overflow:hidden}
+  body[data-music-theme="home"] .games{grid-template-columns:repeat(4,1fr);grid-template-rows:1fr}
+  body[data-music-theme="home"] .card-desc,body[data-music-theme="home"] .station{display:none}
+  body:not([data-music-theme="home"]) .global-header,body[data-music-theme="countryMap"] .reisen-header{height:48px!important;min-height:48px!important;max-height:48px!important}
+  body[data-music-theme="countryMap"] .reise-main,body[data-music-theme="dialoge"] main,body[data-music-theme="saetze"] main{height:calc(100dvh - 48px)}
+  body[data-music-theme="dialoge"] .mission-strip,body[data-music-theme="saetze"] .mission-strip{display:none}
+  body[data-music-theme="dialoge"] .game-layout,body[data-music-theme="saetze"] .game-layout{height:100%}
+  body[data-music-theme="woher"] .case-route{display:none}
+  body[data-music-theme="woher"] .station-layout{height:calc(100dvh - 48px)}
+
+  /* Country Race uses a different header class in the upgraded markup. */
+  body[data-music-theme="countryMap"] .reisen-header{display:flex!important;position:relative!important;inset:auto!important;transform:none!important;width:100%!important;height:48px!important;min-height:48px!important;max-height:48px!important;margin:0!important;padding:3px 8px!important;align-items:center!important;gap:4px!important}
+  body[data-music-theme="countryMap"] .reisen-header__stat,body[data-music-theme="countryMap"] .reisen-header__action--passport{display:none!important}
+  body[data-music-theme="countryMap"] .reisen-header__actions{display:flex!important;margin-left:auto!important;gap:3px!important}
+  body[data-music-theme="countryMap"] .reisen-header__action{width:38px!important;min-width:38px!important;height:38px!important;min-height:38px!important;padding:3px!important}
+  body[data-music-theme="countryMap"] .reisen-header__action span{display:none!important}
+  body[data-music-theme="countryMap"] .reise-main{width:100%!important;height:calc(100dvh - 48px)!important;padding:3px!important;overflow:hidden!important}
+  body[data-music-theme="countryMap"] .reise-screen{height:100%!important;overflow:hidden!important}
+  body[data-music-theme="countryMap"] .play-layout{height:100%!important;display:block!important}
+  body[data-music-theme="countryMap"] .journey-panel,body[data-music-theme="countryMap"] .passport-side{display:none!important}
+  body[data-music-theme="countryMap"] .question-column{height:100%!important;display:flex!important;flex-direction:column!important}
+  body[data-music-theme="countryMap"] .mission-route{display:none!important}
+  body[data-music-theme="countryMap"] .quiz-card{flex:1!important;min-height:0!important;padding:4px 9px!important;overflow:hidden!important}
+  body[data-music-theme="countryMap"] .reise-flag-wrap{width:120px!important;margin:2px auto!important}
+  body[data-music-theme="countryMap"] .reise-answers{grid-template-columns:repeat(4,1fr)!important;gap:4px!important;margin-top:3px!important}
+  body[data-music-theme="countryMap"] .reise-answer{min-height:34px!important;padding:3px!important;font-size:.72rem!important}
+
+  /* Luggage Catch landscape: switch the 3-column desktop board to the compact game. */
+  body[data-music-theme="woher"] .lc-app{height:100dvh!important;grid-template-rows:48px 36px minmax(0,1fr)!important}
+  body[data-music-theme="woher"] .lc-header{grid-template-columns:1fr auto!important;padding:3px 8px!important}
+  body[data-music-theme="woher"] .lc-logo{font-size:23px!important}
+  body[data-music-theme="woher"] .lc-logo svg{width:32px!important}
+  body[data-music-theme="woher"] .lc-global{display:none!important}
+  body[data-music-theme="woher"] .lc-board{margin:1px 5px!important;padding:2px 8px!important;font-size:10px!important}
+  body[data-music-theme="woher"] .lc-board span{display:none!important}
+  body[data-music-theme="woher"] .lc-main{display:block!important;min-height:0!important;padding:2px 5px!important}
+  body[data-music-theme="woher"] .lc-side,body[data-music-theme="woher"] .lc-hud{display:none!important}
+  body[data-music-theme="woher"] .lc-game{height:100%!important;border-width:4px!important}
+  body[data-music-theme="woher"] .lc-target{height:44px!important;padding:3px 8px!important}
+  body[data-music-theme="woher"] .lc-target strong{font-size:18px!important}
+  body[data-music-theme="woher"] .lc-lanes{inset:4px 7px 88px!important}
+  body[data-music-theme="woher"] .lc-bag{min-height:68px!important;padding:3px!important;border-width:3px!important}
+  body[data-music-theme="woher"] .lc-bag img{width:42px!important;height:27px!important}
+  body[data-music-theme="woher"] .lc-cart{bottom:4px!important;width:88px!important;height:58px!important}
+  body[data-music-theme="woher"] .lc-field:before{bottom:52px!important;height:42px!important}
+  body[data-music-theme="woher"] .lc-controls{bottom:2px!important;gap:190px!important}
+  body[data-music-theme="woher"] .lc-move{width:40px!important;height:40px!important}
+  body[data-music-theme="woher"] .lc-catch{bottom:56px!important;padding:6px 16px!important}
+}
